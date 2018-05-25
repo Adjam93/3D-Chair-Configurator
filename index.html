@@ -611,13 +611,12 @@
 
         function addMaterial(id, map) {
 
-            var el = document.getElementById(id);
+           var el = document.getElementById(id);
+           var backMaterial = new THREE.MeshStandardMaterial({ map: map });
+           var cushionMaterial = new THREE.MeshStandardMaterial({ map: map });
 
             el.addEventListener('click', function () {
-
-                var backMaterial = new THREE.MeshStandardMaterial({ map: map });
-                var cushionMaterial = new THREE.MeshStandardMaterial({map: map});
-
+		    
                 var modelPart = document.querySelector('input[name = "mat"]:checked');
 
                 if (modelPart.value == 'back') {
@@ -631,11 +630,9 @@
                         seat_cushion.material = cushionMaterial;
                         seat_cushion.needsUpdate = true;
                     }
-                }
-                
+                }                
                 
             });
-
         }
 
         $(document).ready(function () {
