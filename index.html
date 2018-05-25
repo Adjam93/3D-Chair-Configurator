@@ -312,9 +312,12 @@
             </select>
             <br />
             <div id="transformAttach">
-                <input type="radio" id="r1" name="transformMode" value="translate"> Translate
-                <input type="radio" id="r2" name="transformMode" value="rotate"> Rotate <br />   
-                <input type="radio" id="r3" name="transformMode" value="scale"> Scale
+                <input type="radio" name="transformMode" id="translate" value="translate">
+                <label for="translate">Translate</label>                
+                <input type="radio" name="transformMode" id="rotate" value="rotate">
+                <label for="rotate">Rotate</label><br />
+                <input type="radio" name="transformMode" id="scale" value="scale">
+                <label for="scale">Scale</label>
                 <br />
                 <label for="transform">Attach Transform Controls <input class="check" type="checkbox" id="transform"> </label>
                 <button id="transformReset">Reload Chair</button>
