@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>3D Product Configurator</title>
@@ -98,6 +98,18 @@
             }
         }
 
+        #closeColour, #closeTransform {
+            float:right;
+            display:inline-block;
+            padding:2px 5px;
+            background:#ccc;
+        }
+
+        #closeColour:hover, #closeTransform:hover {
+            background:#ccc;
+            color:#fff;
+        }
+
         #colour_box, #transform_box {
             position: absolute;
             margin-top: 30px;
@@ -112,7 +124,7 @@
             padding: 5px 10px;
         }
 
-        #transform_box {
+        #transform_box {         
             left: 10px;
         }
 
@@ -216,14 +228,13 @@
             bottom: 0
         }
                        
-        input[type=radio] {
-	        height: 20px;
-	        width: 20px;
+        input[name=mat] {
+	    height: 20px;
+	    width: 20px;
             margin-top: 8px;
             margin-bottom: 8px;
             vertical-align: middle;
         }
-
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     </style>
@@ -267,7 +278,7 @@
         </div>
 
         <div id="colour_box">
-
+            <button id="closeColour">x</button>
             <h4 class="box-title">Colour Changer</h4>
             <select id="model_parts" onchange="showPicker();" ondblclick="showPicker();">
                 <option value="" disabled selected>Select Model Part</option>
@@ -288,6 +299,7 @@
         </div>
 
         <div id="transform_box">
+            <button id="closeTransform">x</button>
             <h4 class="box-title">Transform Controls</h4>
             <select id="gizmo" onchange="showGizmo();" ondblclick="showGizmo();">
                 <option value="" disabled selected>Select Model Part</option>
@@ -300,7 +312,10 @@
             </select>
             <br />
             <div id="transformAttach">
-                <span style="line-height:10px">Control Buttons: Press <span class="transFormOptions">T - Translate, R - Rotate, S - Scale</span></span>
+                <input type="radio" id="r1" name="transformMode" value="translate"> Translate
+                <input type="radio" id="r2" name="transformMode" value="rotate"> Rotate   
+                <input type="radio" id="r3" name="transformMode" value="scale"> Scale
+                <br />
                 <label for="transform">Attach Transform Controls <input class="check" type="checkbox" id="transform"> </label>
                 <button id="transformReset">Reload Chair</button>
             </div>
@@ -427,7 +442,7 @@
                 map = textureLoader.load(materialsArray[i]);
                 map.wrapS = map.wrapT = THREE.RepeatWrapping;
                 map.repeat.set(2, 2);
-		    
+
                 mapArr.push(map);
             }
 
@@ -512,7 +527,7 @@
                 back.material = initialBackMat;
                 seat_cushion.material = initialCushMat;
             });
-      
+       
             transformControls.addEventListener('mouseDown', function () {
                 orbitControls.enabled = false;
             });
@@ -520,24 +535,24 @@
                 orbitControls.enabled = true;
             });
 
-            window.addEventListener('keydown', function (event) {
+            $("input:radio[name=transformMode]").click(function () {
+		    
+                var mode = $("input:radio[name=transformMode]:checked").val();
+                switch (mode) {
 
-                switch (event.keyCode) {
-
-                    case 82: // R key pressed - set rotate mode
-                        transformControls.setMode("rotate");
-                        break;
-
-                    case 84: // T key pressed - set translate mode
+                    case 'translate':
                         transformControls.setMode("translate");
                         break;
 
-                    case 83: // S key pressed - set scale mode
+                    case 'rotate':
+                        transformControls.setMode("rotate");
+                        break;
+
+                    case 'scale':
                         transformControls.setMode("scale");
                         break;
                 }
-
-            });
+            });         
 
             window.addEventListener('resize', onWindowResize, false);
         }
@@ -622,12 +637,12 @@
 
         $(document).ready(function () {
 
-            $('#colour').click(function (e) {
+            $('#colour, #closeColour').click(function (e) {
                 e.preventDefault();
                 $('#colour_box').toggle('slow');
             });
-
-            $('#transformBtn').click(function (e) {
+  
+            $('#transformBtn, #closeTransform').click(function (e) {
                 e.preventDefault();
                 $('#transform_box').toggle('slow');
             });
