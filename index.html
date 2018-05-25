@@ -427,14 +427,7 @@
                 map = textureLoader.load(materialsArray[i]);
                 map.wrapS = map.wrapT = THREE.RepeatWrapping;
                 map.repeat.set(2, 2);
-                //SET ROTAION DEPENDING ON MODEL PART SELECTED (BACK OR CUSHION)
-                /*if (backCheck.checked) {
-                    map.rotation = Math.PI / 2;
-                }
-                else if (cushionCheck.checked) {
-                    map.rotation = 0;
-                }*/
-               
+		    
                 mapArr.push(map);
             }
 
@@ -469,37 +462,6 @@
                 initialBackMat = back.material;
                 initialCushMat = seat_cushion.material;
 
-                /*var texture = new THREE.TextureLoader().load('images/materials/stone.jpg')
-                texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-                texture.repeat.set(2, 2);
-                texture.rotation = Math.PI / 2;
-                texture.needsUpdate = true;
-                var material = new THREE.MeshStandardMaterial({ map: texture });
-                back.material = material;
-                back.material.map.needsUpdate = true;*/
-
-                /*var API = {
-                    offsetX: 0,
-                    offsetY: 0,
-                    repeatX: 0.5,
-                    repeatY: 0.5,
-                    rotation: Math.PI / 2
-                };
-
-                var texture2 = back.material.map;
-                if (texture2.matrixAutoUpdate === true) {
-                    texture2.offset.set(API.offsetX, API.offsetY);
-                   // texture2.repeat.set(API.repeatX, API.repeatY);
-                    texture2.rotation = API.rotation; // rotation is around [ 0.5, 0.5 ]
-
-                }*/
-
-                //Get initial colour values
-                //Phong material and colour for seat
-                /*seat_cushion.material = new THREE.MeshPhongMaterial({
-                    color: seat_cushion_colour, specular: 0xffffff, shininess: 10,
-                    flatShading: false
-                })*/
                 seat_cushion_colour = seat_cushion.material.color.getHex();
                 greyColour = back.material.color.getHex();
                 legs_colour = legs.material.color.getHex();
@@ -546,16 +508,11 @@
                 camera.position.set(1.6, 2.17, -2.5);
             });
 
-            document.getElementById('resetMaterial').addEventListener('click', function () {
+            $('#resetMaterial').on('click', function () {
                 back.material = initialBackMat;
                 seat_cushion.material = initialCushMat;
             });
-            /*$('#resetMaterial').on('click', function () {
-                back.material = initialBackMat;
-                seat_cushion.material = initialCushMat;
-            });*/
-       
-
+      
             transformControls.addEventListener('mouseDown', function () {
                 orbitControls.enabled = false;
             });
@@ -663,27 +620,6 @@
 
         }
 
-        /*$("input:radio[name=mat]").click(function () {
-               var modelPart = $("input:radio[name=mat]:checked").val();
-
-               switch (modelPart) {
-
-                   case 'back':
-                       map.rotation = Math.PI / 2;
-                       back.material = material;
-                       back.material.needsUpdate = true;
-                       break;
-
-                   case 'cushion':
-                       map.rotation = 0;
-                       seat_cushion.material = material;
-                       seat_cushion.needsUpdate = true;
-                       break;
-               }
-
-           });*/
-
-
         $(document).ready(function () {
 
             $('#colour').click(function (e) {
@@ -703,10 +639,6 @@
 
             $("#colour_box").draggable();
             $("#transform_box").draggable();
-            /*$("#colour_box").resizable({
-                minHeight: 200,
-                minWidth: 250
-            });*/
 
         });
 
