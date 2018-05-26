@@ -9,237 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="favicon.ico">
 
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            color: white;
-            background: radial-gradient(#edeff4 15%, #d5d8e0 25%, #b4b6ba 60%);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .menuTopNav {
-            overflow: hidden;
-            background-color: darkgrey;
-        }
-
-        .title {
-            font-size: 30px;
-            margin-left: 12px;
-            display: inline-block;
-            line-height: 90px;
-        }
-
-        .menu_button {
-            float: right;
-            margin-top: 5px;
-            margin-right: 30px;
-            width: 80px;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
-        }
-
-            .menu_button:hover {
-                color: #fff;
-                border-bottom: 3px solid #fff;
-            }
-
-            .menu_button:focus, #colourReset:focus, #transformReset:focus, .materialBtn:focus, #resetMaterial:focus  {
-                outline: 0;
-            }
-
-        .menuTopNav .icon {
-            display: none;
-        }
-
-        @media screen and (max-width: 600px) {
-            .menuTopNav a {
-                display: none;
-            }
-
-            .menuTopNav a.icon {
-                float: right;
-                display: block;
-                padding: 14px 16px;
-                color: #ffffff;
-            }
-
-            .title {
-                font-size: 18px;
-                line-height: 0;
-                margin-top: 10px;
-                padding: 14px 0px;
-                width: 80%;
-            }
-        }
-
-        @media screen and (max-width: 600px) {
-            .menuTopNav.responsive {
-                position: relative;
-            }
-
-                .menuTopNav.responsive .icon {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                }
-
-                .menuTopNav.responsive a {
-                    
-                    display: block;
-                    text-align: left;
-                    margin-left: 0;
-                    float: right;
-                }
-
-            .menu_button {
-                margin-top: 15px;
-            }
-        }
-
-        #closeColour, #closeTransform {
-            float:right;
-            display:inline-block;
-            padding:2px 5px;
-            background:#ccc;
-        }
-
-        #closeColour:hover, #closeTransform:hover {
-            background:#ccc;
-            color:#fff;
-        }
-
-        #colour_box, #transform_box {
-            position: absolute;
-            margin-top: 30px;
-            right: 10px;
-            width: 250px;
-            height: 215px;
-            background: #716F71;
-            border-radius: 5%;
-            border: solid 3px white;
-            cursor: move;
-            display: none;
-            padding: 5px 10px;
-	    opacity: 0.8;
-        }
-
-        #transform_box {         
-            left: 10px;
-        }
-
-        .box-title {
-            text-align: center;
-        }
-
-        #colourChange, #transformAttach {
-            display: none;
-        }
-
-        #model_parts, #gizmo {
-            width: 100%;
-            margin-bottom: 15px;
-        }
-
-        .transFormOptions {
-            color: yellow;
-        }
-
-        #colourReset, #transformReset {
-            -moz-box-shadow: 0px 4px 5px 2px #8a2a21;
-            -webkit-box-shadow: 0px 4px 5px 2px #8a2a21;
-            box-shadow: 0px 4px 5px 2px #8a2a21;
-            background-color: #c62d1f;
-            -moz-border-radius: 18px;
-            -webkit-border-radius: 18px;
-            border-radius: 18px;
-            border: 1px solid #d02718;
-            display: inline-block;
-            cursor: pointer;
-            color: #ffffff;
-            font-family: Arial;
-            font-size: 14px;
-            padding: 5px 28px;
-            text-decoration: none;
-            text-shadow: 0px 1px 0px #810e05;
-        }
-
-            #colourReset:hover, #transformReset:hover {
-                background-color: #f24437;
-            }
-
-            #colourReset:active, #transformReset:active {
-                position: relative;
-                top: 1px;
-            }
-
-        #materials_panel {
-            display: none;
-            position: absolute;
-            bottom: 0;
-            z-index: 99;
-        }
-
-        .materialBtn, .materialCheck, #resetMaterial {
-            border: none;
-            cursor: pointer;
-            height: 80px;
-            width: 72px;
-            margin-left: 0px;
-            margin-right: 0px;
-            float: left;
-            transition: all .2s ease-in-out;
-        }
-        .materialCheck {
-            width: 100px;
-            background: blue;
-        }
-
-        #woodMat {
-            background: url(images/materials/floor.jpg);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-        }
-
-        #paperMat {
-            background: url(images/materials/paper.jpg);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-        }
-
-        #blackMat {
-            background: url(images/materials/black.jpg);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-        }
-
-        #stoneMat {
-            background: url(images/materials/stone.jpg);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-        }
-
-        .materialBtn:hover {
-            transform: scaleY(1.2);
-        }
-
-        #credit {
-            position: absolute;
-            bottom: 0
-        }
-                       
-        input[name=mat] {
-	    height: 20px;
-	    width: 20px;
-            margin-top: 8px;
-            margin-bottom: 8px;
-            vertical-align: middle;
-        }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-    </style>
-
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -720,15 +489,21 @@
 
         document.getElementById('export').addEventListener('click', function () {
 
+            var exportConfirm = confirm("Export model and current settings to .glTF format?");
+
             if (chair !== undefined) {
 
-                var exporter = new THREE.GLTFExporter();
+                if (exportConfirm) {
 
-                exporter.parse(chair, function (result) {
+                    var exporter = new THREE.GLTFExporter();
 
-                    saveString(JSON.stringify(result, null, 2), 'chair.gltf');
+                    exporter.parse(chair, function (result) {
 
-                });
+                        saveString(JSON.stringify(result, null, 2), 'chair.gltf');
+
+                    });
+                }
+               
             }
         });
         //END EXPORT GLTF
