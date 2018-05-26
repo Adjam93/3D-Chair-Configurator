@@ -184,26 +184,26 @@ body {
     background: blue;
 }
 
- #woodMat {
-    background: url("images/materials/floor.jpg");
+#woodMat {
+    background: url(../images/materials/floor.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 #paperMat {
-    background: url("images/materials/paper.jpg");
+    background: url(../images/materials/paper.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 #blackMat {
-    background: url("images/materials/black.jpg");
+    background: url(../images/materials/black.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
 #stoneMat {
-    background: url("images/materials/stone.jpg");
+    background: url(../images/materials/stone.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
