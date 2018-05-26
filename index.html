@@ -226,7 +226,7 @@
             addMaterial("blackMat", mapArr[2]); addMaterial("stoneMat", mapArr[3]);
 
             var loader = new THREE.GLTFLoader();
-            loader.load('gltf/Chair/chair2.gltf', function (gltf) {
+            loader.load('gltf/Chair/chair.gltf', function (gltf) {
 
                 chair = gltf.scene;
                 console.log(chair);
@@ -393,13 +393,11 @@
                 var modelPart = document.querySelector('input[name = "mat"]:checked');
 
                 if (modelPart.value == 'back') {
-                    map.rotation = Math.PI / 2;
                     back.material = backMaterial;
                     back.material.needsUpdate = true;
                 }
                 else {
                     if (modelPart.value == 'cushion') {
-                        map.rotation = 0;
                         seat_cushion.material = cushionMaterial;
                         seat_cushion.needsUpdate = true;
                     }
