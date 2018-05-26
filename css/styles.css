@@ -130,10 +130,6 @@ body {
     margin-bottom: 15px;
 }
 
-.transFormOptions {
-    color: yellow;
-}
-
 #colourReset, #transformReset {
     -moz-box-shadow: 0px 4px 5px 2px #8a2a21;
     -webkit-box-shadow: 0px 4px 5px 2px #8a2a21;
