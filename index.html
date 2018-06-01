@@ -161,16 +161,24 @@
             camera.position.set(1.6, 2.17, -2.5);
 
             //LIGHTS
-            var dir_light1 = new THREE.DirectionalLight(0xffffff, 1.2);
-            dir_light1.position.set(-100, -100, -100);
-            scene.add(dir_light1);
-
+            var dir_light = new THREE.DirectionalLight(0xffffff, 1.2);
+            dir_light.position.set(0, 0, 10);
+            scene.add(dir_light);
+            
             var dir_light2 = new THREE.DirectionalLight(0xffffff, 1.2);
-            dir_light2.position.set(100, 100, 100);
+            dir_light2.position.set(0, -10, 0);
             scene.add(dir_light2);
 
-            var amb = new THREE.AmbientLight(0x111111);
-            scene.add(amb);
+            var dir_light3 = new THREE.PointLight(0xffffff, 1.2);
+            dir_light3.position.set(10, 0, 0);
+            scene.add(dir_light3);
+
+            var dir_light4 = new THREE.DirectionalLight(0xffffff, 1.2);
+            dir_light4.position.set(-10, 0, 0);
+            scene.add(dir_light4);
+
+            var ambient = new THREE.AmbientLight(0xffffff);
+            scene.add(ambient);
 
             renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             renderer.setPixelRatio(window.devicePixelRatio);
