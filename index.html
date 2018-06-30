@@ -104,10 +104,20 @@
                     <input type="radio" name="mat" value="cushion" id="cushion">
                     <label for="cushion"> Cushion</label>                
             </div>
-            <button class="materialBtn" id="woodMat"></button>
-            <button class="materialBtn" id="paperMat"></button>
+		
             <button class="materialBtn" id="blackMat"></button>
-            <button class="materialBtn" id="stoneMat"></button>
+            <button class="materialBtn" id="mosaicMat"></button>
+            <button class="materialBtn" id="yellowMat"></button>
+            <button class="materialBtn" id="fabric1"></button>
+            <button class="materialBtn" id="fabric2"></button>
+            <button class="materialBtn" id="fabric3"></button>
+            <button class="materialBtn" id="fabric4"></button>
+            <button class="materialBtn" id="fabric5"></button>
+            <button class="materialBtn" id="fabric6"></button>
+            <button class="materialBtn" id="fabric7"></button>
+            <button class="materialBtn" id="fabric8"></button>
+            <button class="materialBtn" id="fabric9"></button>
+		
             <button id="resetMaterial">Reset Materials</button>
         </div>
         
@@ -217,8 +227,13 @@
             scene.add(transformControls);
 
             var textureLoader = new THREE.TextureLoader();
-            var materialsArray = [ 'images/materials/floor.jpg', 'images/materials/paper.jpg',
-                                   'images/materials/black.jpg', 'images/materials/stone.jpg' ];
+            var materialsArray = [ 'images/materials/black.jpg','images/materials/mosaic.jpg', 'images/materials/yellow.jpg',
+                                   'images/materials/fabrics/fabric1.jpg', 'images/materials/fabrics/fabric2.jpg',
+                                   'images/materials/fabrics/fabric3.jpg', 'images/materials/fabrics/fabric4.jpg',
+                                   'images/materials/fabrics/fabric5.jpg', 'images/materials/fabrics/fabric6.jpg',
+                                   'images/materials/fabrics/fabric7.jpg', 'images/materials/fabrics/fabric8.jpg',
+                                   'images/materials/fabrics/fabric9.jpg'];
+		
             var mapArr = [];
 
             for (var i = 0; i < materialsArray.length; i++) {
@@ -230,8 +245,12 @@
                 mapArr.push(map);
             }
 
-            addMaterial("woodMat", mapArr[0]); addMaterial("paperMat", mapArr[1]);
-            addMaterial("blackMat", mapArr[2]); addMaterial("stoneMat", mapArr[3]);
+            addMaterial("blackMat", mapArr[0]); addMaterial("mosaicMat", mapArr[1]);
+            addMaterial("yellowMat", mapArr[2]); addMaterial("fabric1", mapArr[3]);
+            addMaterial("fabric2", mapArr[4]); addMaterial("fabric3", mapArr[5]);
+            addMaterial("fabric4", mapArr[6]); addMaterial("fabric5", mapArr[7]);
+            addMaterial("fabric6", mapArr[8]); addMaterial("fabric7", mapArr[9]);
+            addMaterial("fabric8", mapArr[10]); addMaterial("fabric9", mapArr[11]);
 
             var loader = new THREE.GLTFLoader();
             loader.load('gltf/Chair/chair.gltf', function (gltf) {
