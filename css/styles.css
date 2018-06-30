@@ -33,7 +33,7 @@ body {
         border-bottom: 3px solid #fff;
     }
 
-    .menu_button:focus, #colourReset:focus, #transformReset:focus, .materialBtn:focus, #resetMaterial:focus {
+    .menu_button:focus, #colourReset:focus, #transformReset:focus, .materialBtn:focus, #resetMaterial:focus, select:focus {
         outline: 0;
     }
 
@@ -130,6 +130,10 @@ body {
     margin-bottom: 15px;
 }
 
+#transformOptions {
+    display: none;
+}
+
 #colourReset, #transformReset {
     -moz-box-shadow: 0px 4px 5px 2px #8a2a21;
     -webkit-box-shadow: 0px 4px 5px 2px #8a2a21;
@@ -180,32 +184,82 @@ body {
     background: blue;
 }
 
-#woodMat {
-    background: url(../images/materials/floor.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-#paperMat {
-    background: url(../images/materials/paper.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
 #blackMat {
     background: url(../images/materials/black.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-
-#stoneMat {
-    background: url(../images/materials/stone.jpg);
+#mosaicMat {
+    background: url(../images/materials/mosaic.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#yellowMat{
+    background: url(../images/materials/yellow.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
-.materialBtn:hover {
+#fabric1{
+    background: url(../images/materials/fabrics/fabric1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#fabric2{
+    background: url(../images/materials/fabrics/fabric2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#fabric3{
+    background: url(../images/materials/fabrics/fabric3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#fabric4{
+    background: url(../images/materials/fabrics/fabric4.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#fabric5{
+    background: url(../images/materials/fabrics/fabric5.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#fabric6{
+    background: url(../images/materials/fabrics/fabric6.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#fabric7{
+    background: url(../images/materials/fabrics/fabric7.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#fabric8{
+    background: url(../images/materials/fabrics/fabric8.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#fabric9{
+    background: url(../images/materials/fabrics/fabric9.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.materialBtn:hover, #resetMaterial:hover {
     transform: scaleY(1.2);
+}
+
+#resetMaterial{
+    box-shadow: 0px 4px 5px 2px #100f0f;
+    background-color: #000;
+    border-radius: 1px;
+    border: 1px solid #000;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #810e05;
 }
 
 #credit {
