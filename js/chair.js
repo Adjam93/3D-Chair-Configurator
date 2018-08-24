@@ -164,19 +164,21 @@
 
         el.addEventListener('click', function () {
 
-            var modelPart = document.querySelector('input[name="mat"]:checked');
+            var backPart = document.getElementById('back');
+            var cushionPart = document.getElementById('cushion');
 
-            if (modelPart.value == 'back') {
+            if (backPart.checked) {
                 main.back.material = backMaterial;
                 main.back.material.needsUpdate = true;
             }
-            else {
-                if (modelPart.value == 'cushion') {
-                    main.seat_cushion.material = cushionMaterial;
-                    main.seat_cushion.needsUpdate = true;
-                }
+            if (cushionPart.checked) {              
+                main.seat_cushion.material = cushionMaterial;
+                main.seat_cushion.needsUpdate = true;
             }
-
+            else if (!backPart.checked && !cushionPart.checked) {
+                alert("Please select either 'Back' or 'Cushion' to apply material")
+            }
+            
         });
 
     },
