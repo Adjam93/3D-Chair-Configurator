@@ -52,7 +52,7 @@
         <div id="colour_box">
             <button id="closeColour">x</button>
             <h4 class="box-title">Colour Changer</h4>
-            <select id="model_parts" onchange="showPicker();" ondblclick="showPicker();">
+            <select id="model_parts" onchange="main.showPicker();" ondblclick="main.showPicker();">
                 <option value="" disabled selected>Select Model Part</option>
                 <option value="seat">Seat Base</option>
                 <option value="seat_cushion">Seat Cushion</option>
@@ -73,7 +73,7 @@
         <div id="transform_box">
             <button id="closeTransform">x</button>
             <h4 class="box-title">Transform Controls</h4>
-            <select id="gizmo" onchange="showGizmo();" ondblclick="showGizmo();">
+            <select id="gizmo" onchange="main.showGizmo();" ondblclick="main.showGizmo();">
                 <option value="" disabled selected>Select Model Part</option>
                 <option value="chair">Whole Chair</option>
                 <option value="seat">Seat Base</option>
@@ -143,7 +143,7 @@
         }
     </script>
 	
-    <script src="js/chair2.js"></script>
+    <script src="js/chair.js"></script>
 	    
 </body>
 </html>
