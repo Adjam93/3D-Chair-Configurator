@@ -2,13 +2,13 @@ body {
     margin: 0;
     overflow: hidden;
     color: white;
-    background: radial-gradient(#edeff4 15%, #d5d8e0 25%, #b4b6ba 60%);
+    background: radial-gradient(#c9e9f2 15%, #afcad1 25%, #95aaaf 60%);
     font-family: 'Poppins', sans-serif;
 }
 
 .menuTopNav {
     overflow: hidden;
-    background-color: darkgrey;
+    background-color: #65777c;
 }
 
 .title {
